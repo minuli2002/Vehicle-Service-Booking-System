@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# environment files
+.env
+backend/.env
+frontend/.env
+
+# build folders
+dist/
+build/
+
+# logs
+*.log
+
+# coverage
+coverage/
+
+# editor files
+.vscode/
+.idea/
+
+# operating system
+.DS_Store
+Thumbs.db
