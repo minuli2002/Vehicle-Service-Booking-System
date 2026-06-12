@@ -1,0 +1,126 @@
+# AutoEase – Vehicle Service Booking System
+
+A full-stack MERN (MongoDB, Express, React, Node.js) web application for booking vehicle maintenance and repair services. AutoEase connects customers with certified technicians through a streamlined, real-time scheduling portal.
+
+
+## Project Overview
+
+AutoEase is a professional vehicle service booking platform with two user roles:
+
+- **Customer** – Can register, browse services, book appointments, and track booking status.
+- **Admin** – Can manage services (add/edit/delete), review pending appointments, approve or reject them, and mark jobs as completed.
+
+Authentication is handled using **JWT tokens** with **bcrypt** password hashing. Role-based access control is enforced across all protected routes.
+
+
+## Features
+
+### Customer
+- Register and log in securely
+- Browse all available vehicle services
+- View detailed service information
+- Book a service appointment (with date, time, vehicle details)
+- Track all bookings with live status updates (Pending / Approved / Rejected / Completed)
+- View personal profile
+
+### Admin
+- Dedicated dashboard with overview statistics (Pending, Total Bookings, Completed)
+- View all pending appointment requests
+- Approve or reject appointments
+- Mark approved appointments as Completed
+- Filter active maintenance schedule by date and status
+- Add, edit, and delete vehicle services (with image upload)
+
+
+## Backend Setup
+
+### Steps
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables in `.env`: **// create a new .env file in backend root folder - copy paste this in .env file - replace the MONGO URI with a real MONGO_URI CONNECTION STRING**
+
+   ```
+   PORT=5000
+   MONGO_URI=mongodb://localhost:27017/autoease    // replace this
+   JWT_SECRET=autoease_super_secret_jwt_key_2024
+   JWT_EXPIRE=7d
+   ADMIN_EMAIL=admin1@gmail.com
+   ADMIN_PASSWORD=admin12345
+
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+   The backend runs on `http://localhost:5000`.
+
+
+## Frontend Setup
+
+### Steps
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables in `.env`:  **// create a new .env file in frontend root folder - copy paste this in .env file**
+
+   ```
+   VITE_API_URL=http://localhost:5000 
+
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+   The frontend runs on `http://localhost:5173`.
+
+
+## Running the Application
+
+Run both servers simultaneously in separate terminals:
+
+**Terminal 1 – Backend:**
+```bash
+cd backend
+npm start
+```
+
+**Terminal 2 – Frontend:**
+```bash
+cd frontend
+npm run dev
+```
+
+Open your browser and visit `http://localhost:5173`. You will be redirected to the Sign Up page.
+
+
+## Default Admin Credentials
+
+The admin account is pre-configured via environment variables. No registration is needed.
+
+| Field    | Value              |
+|----------|--------------------|
+| Email    | admin1@gmail.com   |
+| Password | admin12345         |
+
+Log in via the Sign In page. The system automatically redirects admin users to the Admin Dashboard.
